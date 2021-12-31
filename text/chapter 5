@@ -1,0 +1,12 @@
+# 5.0 Introduce
+
+    - add push -f를 통해 강제로 다 올렸다. 
+    - main과 master로 분리되어 있었지만 main으로 통합. 
+
+# 5.1 Tour of CRA
+
+    - https://memostack.tistory.com/261 참조할만한 페이지
+    - css module이라는 개념이 크게 다가 올것임. 
+    - name.module.css를 사용하면 className에 대해서 랜덤한 이름을 따로 붙여줄 것임. 
+        -> 중복을 막아서 잘 작동하도록 도움.
+
