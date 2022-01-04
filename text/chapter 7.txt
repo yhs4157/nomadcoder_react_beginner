@@ -29,3 +29,23 @@
     hasOwnProperty를 통해 테스트하고 fail 시에는 null, true 시에는 list 출력을 만든다. 
     그리고 해당 코드에서는 가시성을 위해 !를 사용했다. 
 
+# 7.4 Movie App part two
+
+# 7.5 React Router
+
+    - 제목을 클릭해서 링크로 이동하기 기능 추가. 
+    - react-router-dom을 다운로드함. 
+        -> 목표는 무엇인지를 모르겠음. 
+        -> Rounter별로 보여줄 거임. 
+    - App은 라우터를 랜딩함. 
+    - App의 기능은 Home으로 
+    - 라우터간의 이동 <a href>를 사용할 경우 모든 페이지가 새로 시작함. 
+    *** 문제점 : 출력이 이루어지지 않음. 
+
+# 7.6 Parameters
+
+ - route에서 전해주는 것을 받아 사용할 수 있음. 
+    -> prop같음
+ - :id라고 했지만 :tomato라고 하면 tomato: ${id}가 전달됨. 
+ 
+  
