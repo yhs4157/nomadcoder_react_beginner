@@ -1,62 +1,41 @@
-import styles from "./App.module.css";
-import {useState, useEffect} from 'react';
+import { useEffect, useState } from "react";
 
 function App() {
-  const [counter, setCounter] = useState(0); 
-  const [keyword, setKeyword] = useState("");
-  const onClick = () => setCounter((prev) => prev + 1); 
-  const onChange = (event) => setKeyword(event.target.value); 
-
-  const [showing, setShowing] = useState(false); 
-  const onShowClick = () => setShowing((prev) => !prev); 
-
-  useEffect(()=> {
-    console.log("I run only once.")
-  }, []); 
-  
-  useEffect(() => {
-    if(keyword !== "" &&keyword.length > 5) {
-      console.log(`I run when 'keyword' changes.`);
+    const [loading, setLoading] =useState(true); 
+    const [movies, setMovies] = useState([]); 
+    const getMovies = async() => {
+        const json = await (
+            await fetch(`https://yts.mx/api/v2/list_movies.json?minimum_rating=8.0&sort_by=year`)
+            ).json();
+        setMovies(json.data.movies); 
+        setLoading(false); 
     }
-  }, [keyword]);
-
-  useEffect(() => {
-      console.log(`I run when 'counter' changes.`);
-  }, [counter]);
-
-  function Hello() {
-    function byFn() {
-      console.log("create :("); 
-    }
-    function hiFn() {
-      console.log("create :)"); 
-      return byFn; 
-    }
-    useEffect(hiFn, []);
-    return <h1>Hello</h1>;
-  }
-
-  return (
-    <div className="App">
-      <h1 className={styles.title}>Welcome back!</h1>
-      <input 
-        value={keyword}
-        type="text" 
-        placeholder="Search here" 
-        onChange={onChange} 
-      />
-      <h1>{counter}</h1>
-      <button onClick={onClick}>Click me</button>
-      {showing ? <Hello /> : null}
-      
-      <button 
-        onClick={onShowClick}
-      >
-        {showing ? "Hide" : "Show"}
-      </button>
-    
-    </div>
-  );
+    useEffect(() => {
+        getMovies(); 
+    }, []); 
+    console.log(movies); 
+    return (
+        <div>
+            {loading ? <h1>Loading...</h1> : 
+            (
+            <div>
+                {movies.map((movie) => (
+                    <div key={movie.id}>
+                        <img src={movie.medium_cover_image} />
+                        <h2>{movie.title}</h2>
+                        <p>{movie.summary}</p>
+                        {(!movie.hasOwnProperty("genres") ? null :
+                        <ul>
+                            {movie.genres.map((g) => (
+                                <li key={g}>{g}</li>
+                            ))}
+                        </ul>)}
+                    </div>
+                ))}
+            </div>
+            )}
+        </div>
+    );
 }
 
-export default App;
+export default App; 

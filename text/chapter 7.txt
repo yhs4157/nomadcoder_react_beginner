@@ -1,0 +1,31 @@
+# 7.0 To Do List part One
+
+    - [value, ...array]는 array에 새로운 값을 추가한 것이 된다. 
+    - 단순한 list item, list만 만들어봄. 
+
+# 7.1 To Do List part Two
+
+    - map function 설명 
+        : array에 item 모두에게 map(function) function이 모두 적용된다. 
+    - 문제 : render할 때 문제가 생김. 
+        -> 컴포넌트의 list 랜더링할 때 key를 prop에 넣어주어야한다. 
+    - array의 index를 받아와서 li에 key로 사용한다. 
+
+# 7.2 Coin Tracker
+
+    - 로딩 페이지를 만들려고 하는 것. 
+    - API를 사용할 것. coinpaprika -> 8천개의 코인을 만들 수 있음. 
+    - console.log()로 확인하면 큰 array를 확인할 수 있음. 
+    - coin은 모두 id를 가지고 있기에 index를 들고 올 필요는 없음. 
+    ***** 과제 : USD가 아닌 BIT로 변환하는 input과 출력기 만들기 *******
+
+# 7.3 Moive App part One
+
+    **** json 관련하여 정보가 필요하면 그냥 chrome에 fetch의 내역과 똑같이 치면 나온다. 
+    - 이전과는 다른 형태로 Promise.then 형태가 아닌 asyn.await로 작성하려 한다. 
+    - 두번 출력되는 이유 - setMovies, setLoading 두가지를 진행하였기 때문에
+    - 괄호 문제로 출력이 되지 않음. ()이여야 하는걸 {}로 사용. 
+    **** 강의에서는 그냥 genres의 리스트를 뽑아내지만 실제로 genres가 없는 경우가 생겨
+    hasOwnProperty를 통해 테스트하고 fail 시에는 null, true 시에는 list 출력을 만든다. 
+    그리고 해당 코드에서는 가시성을 위해 !를 사용했다. 
+
