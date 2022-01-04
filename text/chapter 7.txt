@@ -41,11 +41,13 @@
     - App의 기능은 Home으로 
     - 라우터간의 이동 <a href>를 사용할 경우 모든 페이지가 새로 시작함. 
     *** 문제점 : 출력이 이루어지지 않음. 
+        -> 원인 : 이전 챕터까지는 movies.hasOwnProperty를 통하여 일을 확인했는데 prop를 사용함으로 인해 
+        movies 자체가 넘어오지 않고 각각의 property가 넘어왔음. 그로 인하여 사용할 수 없게 된 것이 치명적. 
 
 # 7.6 Parameters
 
  - route에서 전해주는 것을 받아 사용할 수 있음. 
     -> prop같음
  - :id라고 했지만 :tomato라고 하면 tomato: ${id}가 전달됨. 
- 
+
   
