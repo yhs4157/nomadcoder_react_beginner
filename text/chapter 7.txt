@@ -75,4 +75,3 @@ ex) grid-template-column: repeat(2, minmax(400px, 1fr));에서 앞에 <div>가
 다 받음. -> 더 확인하기가 어려움. 
 
 => 해결법 : div를 제거. 
-
